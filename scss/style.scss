@@ -19,7 +19,7 @@ $xl: '(max-width: 1400px)';
 
 
 body{
-  background: #ddd;
+  background: white;
   font-family: Ubuntu;
   cursor: default;
   width: 100vw;
@@ -241,7 +241,7 @@ main{
        width: 100%;
        height: auto;
        text-align: left;
-       background: #bbb;
+       background: #ccc;
        @include media($xl){
           margin-top: 3%;
         } 
