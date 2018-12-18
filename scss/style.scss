@@ -1,0 +1,524 @@
+$primary-color: #ad0e8b;
+$md: 1.2em;
+
+
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+
+//media queries-------------------------
+$phone-tab: '(max-width: 800px)';
+$phone: '(max-width: 500px)';
+$xl: '(max-width: 1400px)';
+
+//media query mixin for responsive design----------------
+@mixin media($query){
+  @media only screen and #{$query}{
+    @content;
+ }
+}
+//-------------------------------------------------
+
+
+body{
+  background: #ddd;
+  font-family: Ubuntu;
+  cursor: default;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+main{
+  width: 100%;
+  height: 550px;
+  background: #212121;
+  font-size: calc(1.6em + 1vmax);
+  
+  >nav{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    >div{
+      margin: 25px;
+      font-weight: 800;
+      line-height: 1.1;
+      text-transform: uppercase;
+      vertical-align: middle;
+      color: white;
+      z-index: 1;
+      @include media($phone-tab){
+       margin: 10px;
+      }
+
+      >span{
+        color: #ffdb4d;
+      }
+    }
+    
+    >ul{
+      display: flex;
+      margin: 33px;
+      padding: 0 80px;
+      list-style-type: none;
+      font-size: calc(0.6rem + 0.5vmax);
+       @include media($phone){
+         margin: 10px;
+         margin-right: 14px;
+         font-size: 0.5rem;
+         padding: 30px;
+       }
+      >li{
+        color: grey;
+        margin-right: 15%;
+        padding-right: 2%;
+        cursor: pointer;
+        text-transform: uppercase;
+        
+        &:hover{
+          color: #555;
+        }
+      }
+    }
+  }
+  
+  >.content{
+    position: relative;
+    width: 100%;
+    height: 80%;
+    border-top: 1px solid white;
+    >#java{
+      position: absolute;
+      top: 60%;
+      left: 2%;
+      transform: rotate(45deg);
+      width: 200px;
+      height: 200px;
+      @include media($phone-tab){
+        width: 100px;
+        height: 100px;
+      }
+    }
+    >#main-img{
+      position: absolute;
+      top: -35%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 640px;
+      height: 640px;
+      z-index: 1;
+       @include media($phone-tab){
+        width: 500px;
+        height: 500px;
+        top: -15%;
+      }
+    }
+    >#globe{
+      position: absolute;
+      top: 0;
+      right: 0;
+      transform: rotate(45deg);
+      width: 20vmax;
+      height: 20vmax;
+    }
+  }
+  
+  >.icons{
+    width: 100%;
+    height: 7%;
+    background: #0d0d0d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    i{
+      font-size: 1.8rem;
+      color: #333;
+      z-index: 1;
+      margin: 0 4%;
+      cursor: pointer;
+     
+      &:hover{
+        color: white !important;
+      }
+    }
+  }
+}
+
+
+#blog{
+  margin-top: 10%;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+   @include media($xl){
+     flex-direction: column;
+   }
+  
+  >#news{
+    margin-left: 3%;
+    width: 40%;
+    height: 100%;
+    margin-right: 3%;
+    @include media($xl){
+     width: 100%;
+      margin: 0;
+   }
+    
+    #subscribe-card{
+      border-radius: 5px;
+      border-top: 3px solid #ffdb4d;
+      height: 500px;
+      width: 100%;
+      margin-top: 5%;
+      padding: 2% 1%;
+      text-align: center;
+      background-image: linear-gradient(to bottom, #313131, black);
+      @include media($xl){
+        padding: 5px;
+        margin: 0;
+      } 
+      
+      >img{
+        display: block;
+        width: 60px;
+        height: 60px;
+        margin: 5% auto;
+        @include media($xl){
+          margin: 1% auto;
+        } 
+      }
+      
+      >h2{
+        color: white;
+      }
+      >p{
+        color:grey;
+      }
+      
+      >input{
+        width: 80%;
+        height: 46px;
+        padding: 8px;
+        color: #444;
+        background: white;
+        margin: 5% auto;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        @include media($xl){
+          margin: 2% auto;
+        } 
+      }
+      
+      >button{
+        display: block;
+        width: auto;
+        height: auto;
+        margin: 5% auto;
+        padding: 12px 24px;
+        color: white;
+        border: 1px solid white;
+        background: transparent;
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: 800;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 150ms;
+        @include media($xl){
+          margin: 1% auto;
+        } 
+        
+        &:hover{
+          background: white;
+          color: black;
+        }
+       }   
+      }
+     >.widget{
+       display: block;
+       margin-top: 10%;
+       width: 100%;
+       height: auto;
+       text-align: left;
+       background: #bbb;
+       @include media($xl){
+          margin-top: 3%;
+        } 
+       
+       >h2{
+         font-weight: 800;
+         padding: 10px;
+         background: grey;
+         color: black;
+       }
+        
+       >ul{
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+         >li{
+           padding: 8px;
+           border-bottom: 1px dotted grey;
+           font-size: 1.2rem;
+           font-weight: 400;
+           color: grey;
+           cursor: pointer;
+           &:hover{
+             color: black;
+           }
+           
+           >a{
+              margin-left: 5%;
+              text-decoration: none;
+              color: inherit;
+           }
+         }
+       }
+       
+      }
+    }
+  
+ 
+  
+  
+  >#feed {
+    width: 100%;
+    height: auto;
+    
+  .grids{
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-column-gap: 35px;
+    grid-row-gap: 50px;
+    @include media($phone-tab){
+      grid-template-columns: 1fr;
+    } 
+    
+    >.card{
+      width: auto;
+      height: 400px;
+      background: linear-gradient(to right, #212121 0%,#212121 70%,#212121 70%,white 70%,white 100%);
+      
+      >.info{
+        width: 40%;
+        margin: 8% 5%;
+        
+        >h2{
+          color: white;
+        }
+        
+        >p{
+          color: grey;
+          font-size: 1.2rem;
+        }
+        
+         >button{
+        width: auto;
+        height: auto;
+       // margin: 5% auto;
+        padding: 12px 24px;
+        color: white;
+        border: 1px solid white;
+        background: transparent;
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: 800;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 150ms;
+        
+        &:hover{
+          background: white;
+          color: black;
+        }
+       }   
+      }
+      
+      >.wrapper{
+        width: 200px;
+        position: absolute;
+        top: 50%;
+        left: 70%;
+        transform: translate(-50%, -50%);
+        background: #0d0d0d;
+        box-shadow: 0px 2px 25px black;
+        >img{
+          width: 100%;
+          height: 100%;
+        }
+      }
+      
+      >.avatar{
+        margin: 0;
+        width: 100%;
+        height: 90px !important;
+        display: flex;
+        justify-content: flex-end;
+        background: #1d1d1d;
+        
+        >#date-by{
+          font-size: 1rem;
+          margin: 1% 3%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: flex-end;
+          
+          >date{
+            color: grey;
+          }
+          >p{
+            color: white;
+          }
+        }
+        
+        >img{
+          width: 100px;
+          height: 90px;
+        }
+      }
+    }
+   }
+    
+    >#trending{
+      width: 100%;
+      height: auto;
+      margin: 15% 1%;
+      
+      >h2{
+        background: #ffdb4d;
+        color: black;
+        text-align: center;
+        font-weight: 800;
+        padding: 8px;
+      }
+      
+      >.card{
+        width: 100%;
+        height: auto;
+        background: linear-gradient(to bottom, #212121 0%,#212121 70%,#212121 70%,white 70%,white 100%);
+        
+         >.info{
+        width: 40%;
+        margin: 8% 5%;
+        
+        >h2{
+          color: white;
+        }
+        
+        >p{
+          color: grey;
+          font-size: 1.2rem;
+        }
+        
+         >button{
+        width: auto;
+        height: auto;
+       // margin: 5% auto;
+        padding: 12px 24px;
+        color: white;
+        border: 1px solid white;
+        background: transparent;
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: 800;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 150ms;
+        
+        &:hover{
+          background: white;
+          color: black;
+        }
+       }   
+      }
+      
+      >.wrapper{
+        width: 200px;
+        position: absolute;
+        top: 50%;
+        left: 70%;
+        transform: translate(-50%, -50%);
+        background: #0d0d0d;
+        box-shadow: 0px 2px 25px black;
+        >img{
+          width: 100%;
+          height: 100%;
+        }
+      }
+      
+      >.avatar{
+        margin: 0;
+        width: 100%;
+        height: 60% !important;
+        display: flex;
+        justify-content: flex-end;
+        background: #1d1d1d;
+        
+        >#date-by{
+          font-size: 1rem;
+          margin: 1% 3%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: flex-end;
+          
+          >date{
+            color: grey;
+          }
+          >p{
+            color: white;
+          }
+        }
+        
+        >img{
+          width: 100px;
+          height: 90px;
+        }
+       }
+      }
+    }
+  }
+}
+
+
+
+footer{
+  height: 180px;
+  width: 100%;
+  background: #212121;
+  text-align: center;
+  padding: 2% 0;
+  color: white;
+  
+  >div{
+    margin: 30px auto;
+    height: 30%;
+    width: 100vw;
+    border-bottom: 1px solid #ffdb4d;
+    
+    >ul{
+      list-style-type: none;
+      display: flex;
+      justify-content: center;
+      margin: 0 auto;
+
+      >li{
+         margin-right: 5%;
+        text-transform: uppercase;
+        cursor: pointer;
+        @include media($phone){
+          font-size: 0.7em;
+       }
+        
+        &:hover{
+          color: #555;
+        }
+      }
+    }
+  }
+}
