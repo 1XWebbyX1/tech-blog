@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Ubuntu");
 body {
-  background: #ddd;
+  background: white;
   font-family: Ubuntu;
   cursor: default;
   width: 100vw;
@@ -228,7 +228,7 @@ main > .icons i:hover {
   width: 100%;
   height: auto;
   text-align: left;
-  background: #bbb;
+  background: #ccc;
 }
 @media only screen and (max-width: 1400px) {
   #blog > #news > .widget {
